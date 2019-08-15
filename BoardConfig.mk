@@ -99,6 +99,9 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Manifest
+DEVICE_MANIFEST_FILE := device/huawei/g750c/manifest.xml
+
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 TARGET_TAP_TO_WAKE_NODE := "/sys/touch_screen/easy_wakeup_gesture"
