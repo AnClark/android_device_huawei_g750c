@@ -1,0 +1,53 @@
+ 
+#============= healthd ==============
+allow healthd sysfs:file { getattr open read };
+
+#============= init ==============
+allow init apk_data_file:sock_file write;
+allow init ion_device:chr_file write;
+allow init proc:file { getattr open read write };
+allow init rootfs:file { execute_no_trans setattr };
+allow init self:socket { create ioctl read };
+
+#!!!! This avc is allowed in the current policy
+allow init self:udp_socket ioctl;
+allow init shell_exec:file execute_no_trans;
+allow init smd_device:chr_file write;
+allow init sysfs:file { open setattr write };
+allow init sysfs_kgsl:lnk_file read;
+allow init sysfs_msm_perf:file open;
+allow init sysfs_msm_power:file { open write };
+allow init sysfs_smd_open_timeout:file { open write };
+allow init system_file:file execute_no_trans;
+allow init video_device:chr_file { ioctl write };
+
+#============= logpersist ==============
+allow logpersist system_data_file:file write;
+
+#============= mediacodec ==============
+allow mediacodec kmsg_debug_device:chr_file { append open };
+
+#============= mediaextractor ==============
+allow mediaextractor kmsg_debug_device:chr_file { append open };
+
+#============= toolbox ==============
+allow toolbox diag_device:chr_file { read write };
+allow toolbox init:fifo_file { getattr read write };
+allow toolbox kernel:system syslog_mod;
+allow toolbox proc_kmsg:file { open read };
+allow toolbox self:capability2 syslog;
+allow toolbox smem_log_device:chr_file { read write };
+allow toolbox system_data_file:file write;
+
+#============= init ==============
+allow init rpmb_device:blk_file write;
+allow init self:udp_socket ioctl;
+allow init sensors_data_file:file append;
+allow init smem_log_device:chr_file { ioctl write };
+allow init ssd_device:blk_file write;
+allow init sysfs:file read;
+
+#============= libqmi_oem_main ==============
+allow libqmi_oem_main proc_stat:file { getattr open read };
+allow libqmi_oem_main properties_device:dir { open read };
+
