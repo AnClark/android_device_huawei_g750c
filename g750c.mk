@@ -170,6 +170,11 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti \
     power.msm8226
 
+# Seccomp
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    $(LOCAL_PATH)/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+    
 # Sensors
 PRODUCT_PACKAGES += \
     sensor_def_qcomdev.conf
