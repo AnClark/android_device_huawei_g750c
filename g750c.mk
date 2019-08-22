@@ -167,6 +167,7 @@ PRODUCT_PACKAGES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
+    android.hardware.power@1.1-service-qti \
     power.msm8226
 
 # Sensors
